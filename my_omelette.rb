@@ -9,11 +9,11 @@ def print_progress_bar
 end
 
 @num_chicken_slides = 2
-@num_cheez_slides = 2
+@num_cheese_slides = 2
 
 ingredients = [
   { name: 'chicken', quantity: @num_chicken_slides },
-  { name: 'cheez', quantity: @num_cheez_slides },
+  { name: 'cheese', quantity: @num_cheez_slides },
   { name: 'oil', quantity: 'some' },
   { name: 'salt', quantity: 'some' },
 ]
@@ -43,3 +43,12 @@ loop do
     puts "That's not a valid input. Try again."
   end
 end
+
+steps = [
+  { description: "stuff the chicken", action: "put cheese on the chicken slides and fold it" },
+  { description: "salt the food", action: "spread some salt on the chicken" },
+  { description: "heating the oil", action: "putting the oil in a pan and put the pan on the cook" },
+  { description: "waiting", action: "waiting 10 mins till the oil be 170`" },
+  { description: "frying", action: "puting Skalob in the oil" },
+  { description: "waiting", action: "waiting 10 mins till the chicken reay" }
+  ]
