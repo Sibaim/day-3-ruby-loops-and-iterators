@@ -52,3 +52,32 @@ steps = [
   { description: "frying", action: "puting Skalob in the oil" },
   { description: "waiting", action: "waiting 10 mins till the chicken reay" }
   ]
+
+  print_divider
+  puts "See below the different steps to follow:"
+
+  steps.each_with_index do |step, index|
+    puts (index + 1).to_s + ") " + step[:description]
+  end
+
+  def ask_if_ready(step, index)
+  puts "Are you ready for step #{index + 1}?\n(#{step[:description]})"
+  answer = gets.chomp
+
+  answer.upcase == 'Y'
+end
+steps.each_with_index do |step, index|
+  print_divider
+
+  loop do
+    ready = ask_if_ready(step, index)
+    break if ready
+
+    puts "OK, I will give you some extra time."
+    print_progress_bar
+  end
+
+  send(step[:action])
+end
+print_divider
+puts "Listo! Enjoy your meal!"
