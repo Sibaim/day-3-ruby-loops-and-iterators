@@ -12,8 +12,16 @@ end
 @num_cheez_slides = 2
 
 ingredients = [
-  { name: 'chicken', quantity: NUM_POTATOES },
-  { name: 'cheez', quantity: NUM_EGGS },
+  { name: 'chicken', quantity: @num_chicken_slides },
+  { name: 'cheez', quantity: @num_cheez_slides },
   { name: 'oil', quantity: 'some' },
   { name: 'salt', quantity: 'some' },
 ]
+puts "*    Let's cook a Skalob    *"
+print_divider
+
+puts "You need the following ingredients:"
+
+ingredients.each do |ingredient|
+  puts "* #{ingredient[:quantity]} #{ingredient[:name]}"
+end
